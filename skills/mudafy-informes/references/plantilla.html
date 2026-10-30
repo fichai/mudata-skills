@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informe Mudafy</title>
+<style>
+  :root {
+    --bg: #ffffff; --surface: #f5f6fb; --text: #021d49; --muted: #4b5675;
+    --border: #dde1ee; --primary: #283777; --accent: #6679d6; --accent-light: #7e96f5;
+    --alert: #ff5566; --grey: #b4b9c9;
+    --s1: #283777; --s2: #6679d6; --s3: #009689; --s4: #f54900; --s5: #8b5cf6; --s6: #e11d78;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1222; --surface: #171b33; --text: #e6e9f7; --muted: #a3abc8;
+      --border: #2a3055; --primary: #c9d2fb; --grey: #5b6285;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1222; --surface: #171b33; --text: #e6e9f7; --muted: #a3abc8;
+    --border: #2a3055; --primary: #c9d2fb; --grey: #5b6285;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.5 Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 24px 16px 48px; }
+  .brand { font-weight: 700; letter-spacing: .02em; color: var(--primary); }
+  h1 { font-size: 1.75rem; line-height: 1.2; margin: 8px 0 4px; color: var(--primary); }
+  h2 { font-size: 1.2rem; margin: 32px 0 8px; color: var(--primary); }
+  .context { color: var(--muted); margin: 0 0 24px; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+  .kpi { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+  .kpi .v { font-size: 1.7rem; font-weight: 700; color: var(--primary); font-variant-numeric: tabular-nums; }
+  .kpi .l { color: var(--muted); font-size: .875rem; }
+  .kpi .d { font-size: .875rem; font-weight: 600; }
+  .kpi .d.neg { color: var(--alert); }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0; font-variant-numeric: tabular-nums; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: right; }
+  th:first-child, td:first-child { text-align: left; }
+  th { color: var(--muted); font-weight: 600; font-size: .875rem; }
+  .note { color: var(--muted); font-size: .875rem; }
+  footer { margin-top: 32px; padding-top: 12px; border-top: 1px solid var(--border); color: var(--muted); font-size: .875rem; }
+  svg text { fill: var(--text); font-size: 12px; font-family: inherit; }
+  svg .muted { fill: var(--muted); }
+  svg .axis { stroke: var(--border); }
+</style>
+</head>
+<body>
+<main>
+  <div class="brand">Mudafy</div>
+  <h1>Las operaciones firmadas crecieron 12 % en el trimestre</h1>
+  <p class="context">Julio a septiembre de 2026 · Red Mudafy, Argentina</p>
+
+  <section class="kpis" aria-label="Indicadores principales">
+    <div class="kpi"><div class="l">Operaciones firmadas</div><div class="v">1.234</div><div class="d">+12 % vs. trimestre anterior</div></div>
+    <div class="kpi"><div class="l">GCI</div><div class="v">US$ 2,1 M</div><div class="d">+8 %</div></div>
+    <div class="kpi"><div class="l">Casos creados</div><div class="v">18.450</div><div class="d neg">-5 %</div></div>
+    <div class="kpi"><div class="l">Captaciones</div><div class="v">642</div><div class="d">+3 %</div></div>
+  </section>
+
+  <h2>Septiembre fue el mejor mes del trimestre</h2>
+  <p>Una o dos frases con la lectura del gráfico.</p>
+  <svg viewBox="0 0 520 220" role="img" aria-label="Operaciones firmadas por mes" width="100%">
+    <line class="axis" x1="40" y1="180" x2="510" y2="180"/>
+    <rect x="80"  y="104" width="90" height="76"  fill="var(--s1)"/>
+    <rect x="215" y="86"  width="90" height="94"  fill="var(--s1)"/>
+    <rect x="350" y="60"  width="90" height="120" fill="var(--s2)" opacity=".75"/>
+    <text x="125" y="98"  text-anchor="middle">380</text>
+    <text x="260" y="80"  text-anchor="middle">470</text>
+    <text x="395" y="54"  text-anchor="middle">384 (parcial)</text>
+    <text class="muted" x="125" y="200" text-anchor="middle">Julio</text>
+    <text class="muted" x="260" y="200" text-anchor="middle">Agosto</text>
+    <text class="muted" x="395" y="200" text-anchor="middle">Septiembre</text>
+  </svg>
+
+  <h2>Tres oficinas concentran la mitad de la actividad</h2>
+  <table>
+    <thead><tr><th>Oficina</th><th>Operaciones</th><th>GCI (US$)</th><th>Variación</th></tr></thead>
+    <tbody>
+      <tr><td>Oficina A</td><td>312</td><td>540.200</td><td>+14 %</td></tr>
+      <tr><td>Oficina B</td><td>287</td><td>498.900</td><td>+6 %</td></tr>
+      <tr><td>Oficina C</td><td>201</td><td>377.400</td><td>-3 %</td></tr>
+      <tr><td>Otras</td><td>434</td><td>683.500</td><td>+16 %</td></tr>
+    </tbody>
+  </table>
+
+  <p class="note">Septiembre es parcial: los datos se siguen completando. Montos en dólares (US$).</p>
+  <footer>Fuente: Mudata · datos al 30 de octubre de 2026</footer>
+</main>
+</body>
+</html>
